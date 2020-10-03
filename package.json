@@ -1,0 +1,25 @@
+{
+  "name": "prestamofrances",
+  "version": "1.0.0",
+  "description": "Calcula un prestamo en base al metodo frances",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./index.js"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sara991/PrestamoFrances.git"
+  },
+  "keywords": [
+    "prestamo",
+    "node"
+  ],
+  "author": "Sara Fuentes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sara991/PrestamoFrances/issues"
+  },
+  "homepage": "https://github.com/sara991/PrestamoFrances#readme"
+}
