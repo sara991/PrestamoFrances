@@ -8,8 +8,6 @@ const app= express();
 
 
 // Crear una ruta para /
-// Información sobre los verbos HTTP
-// ----get peticion para un servidor ( require= encabezados, response=respuesta que da el servidor)
 
 app.get("/", (req, res, next) => {
  res.send("Bienvenido");
