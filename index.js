@@ -1,3 +1,4 @@
+  
 // Importar express
 const express = require("express");
 // Importar handlebars como template engine
@@ -30,9 +31,11 @@ app.post("/prestamo", (req, res, next) => {
   // https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Destructuring_assignment
   const { monto, tasaInteres, periodo } = req.body;
 
-  calcularMetodoFrances(monto, tasaInteres, periodo);
+  const cuotas = calcularMetodoFrances(monto, tasaInteres, periodo);
 
-  res.send("Petición aceptada");
+  //mandar a llamar vista del resultado
+  //llamar el arreglo de los calculos para usarlo en la vista resultado
+  res.render("resultado_prestamo",{cuotas});
 });
 
 // Inicializar el servidor en un puerto en específico

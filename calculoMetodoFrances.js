@@ -5,7 +5,7 @@
 
 exports.calcularMetodoFrances = (capital, tasaInteres, plazo) => {
   let cuota = 0;
-  let mes = 0;
+  
   let interess = 0;
   let capitalDeudaPendiente;
   let tasaInteresDecimal = tasaInteres / 100;
@@ -15,26 +15,24 @@ exports.calcularMetodoFrances = (capital, tasaInteres, plazo) => {
   // Transformar los años en meses
   plazo = Math.round(plazo * 12);
   // Calcular la cuota
-  cuota =(capital * tasaInteresDecimal) / (1 - (1 + tasaInteresDecimal) ** -plazo)
+  cuota =((capital * tasaInteresDecimal) / (1 - (1 + tasaInteresDecimal) ** -plazo)).toFixed(2);
 
 
 
-	for (var count = 0; count < plazo; ++count)
+	for (var mes = 0; mes < plazo; ++mes)
 	{ 
 
-		interess = capital * tasaInteresDecimal;
-    capitalAmort = cuota - interess ;
-    capital = capital - capitalAmort;
+		interess = (capital * tasaInteresDecimal).toFixed(2);
+    capitalAmort = (cuota - interess ).toFixed(2);
+    capital = (capital - capitalAmort).toFixed(2);
    
-
-    console.log("Mes:"  + (count + 1));
-    console.log(`Capital: ${cuotas[capitalAmort]= capitalAmort.toFixed(2)} `);
-    console.log(`Interes: ${cuotas[interess] = interess.toFixed(2)}`);
-    console.log(`Cuota: ${cuotas[cuota] = cuota.toFixed(2)}`);
-    console.log(`Deuda Pendiente: ${cuotas[capital] = capital.toFixed(2)}`);
+cuotas.push({
+  mes, capitalAmort, interess, cuota,capital})
+   
+    
 	}
 	
-
+return cuotas;
 
   
   
